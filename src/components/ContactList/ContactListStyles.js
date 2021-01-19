@@ -5,4 +5,13 @@ const List = styled.ul`
   padding: 0;
 `;
 
-export { List };
+const Error = styled.div`
+  color: #b22222;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 20px 16px 0;
+  font-size: 22px;
+  text-align: center;
+`;
+
+export { List, Error };
