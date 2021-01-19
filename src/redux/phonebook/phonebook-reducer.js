@@ -1,6 +1,18 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import tasksActions from './phonebook-action';
+// import tasksActions from './phonebook-action';
+import {
+  filterContact,
+  fetchContactRequest,
+  fetchContactSuccess,
+  fetchContactError,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  removeContactRequest,
+  removeContactSuccess,
+  removeContactError,
+} from './phonebook-action';
 
 const fetchContact = (_, { payload }) => {
   return [...payload];
@@ -15,41 +27,41 @@ const removeContact = (state, { payload }) => {
 };
 
 const items = createReducer([], {
-  [tasksActions.fetchContactSuccess]: fetchContact,
-  [tasksActions.addContactSuccess]: addContact,
-  [tasksActions.removeContactSuccess]: removeContact,
+  [fetchContactSuccess]: fetchContact,
+  [addContactSuccess]: addContact,
+  [removeContactSuccess]: removeContact,
 });
 
 const filter = createReducer('', {
-  [tasksActions.filterContact.type]: (_, { payload }) => payload,
+  [filterContact.type]: (_, { payload }) => payload,
 });
 
 const loading = createReducer(false, {
-  [tasksActions.fetchContactRequest]: () => true,
-  [tasksActions.fetchContactSuccess]: () => false,
-  [tasksActions.fetchContactError]: () => false,
+  [fetchContactRequest]: () => true,
+  [fetchContactSuccess]: () => false,
+  [fetchContactError]: () => false,
 
-  [tasksActions.addContactRequest]: () => true,
-  [tasksActions.addContactSuccess]: () => false,
-  [tasksActions.addContactError]: () => false,
+  [addContactRequest]: () => true,
+  [addContactSuccess]: () => false,
+  [addContactError]: () => false,
 
-  [tasksActions.removeContactRequest]: () => true,
-  [tasksActions.removeContactSuccess]: () => false,
-  [tasksActions.removeContactError]: () => false,
+  [removeContactRequest]: () => true,
+  [removeContactSuccess]: () => false,
+  [removeContactError]: () => false,
 });
 
 const error = createReducer(false, {
-  [tasksActions.fetchContactRequest]: () => '',
-  [tasksActions.fetchContactSuccess]: () => '',
-  [tasksActions.fetchContactError]: (_, { payload }) => payload,
+  [fetchContactRequest]: () => '',
+  [fetchContactSuccess]: () => '',
+  [fetchContactError]: (_, { payload }) => payload,
 
-  [tasksActions.addContactRequest]: () => '',
-  [tasksActions.addContactSuccess]: () => '',
-  [tasksActions.addContactError]: (_, { payload }) => payload,
+  [addContactRequest]: () => '',
+  [addContactSuccess]: () => '',
+  [addContactError]: (_, { payload }) => payload,
 
-  [tasksActions.removeContactRequest]: () => '',
-  [tasksActions.removeContactSuccess]: () => '',
-  [tasksActions.removeContactError]: (_, { payload }) => payload,
+  [removeContactRequest]: () => '',
+  [removeContactSuccess]: () => '',
+  [removeContactError]: (_, { payload }) => payload,
 });
 
 const phonebookReducer = combineReducers({

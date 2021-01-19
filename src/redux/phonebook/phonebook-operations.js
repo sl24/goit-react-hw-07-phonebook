@@ -1,33 +1,44 @@
 import axios from 'axios';
-import tasksActions from './phonebook-action';
+// import tasksActions from './phonebook-action';
+import {
+  fetchContactRequest,
+  fetchContactSuccess,
+  fetchContactError,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  removeContactRequest,
+  removeContactSuccess,
+  removeContactError,
+} from './phonebook-action';
 
 axios.defaults.baseURL = 'http://localhost:4001/';
 
 const fetchUserContact = () => dispatch => {
-  dispatch(tasksActions.fetchContactRequest());
+  dispatch(fetchContactRequest());
 
   axios
     .get('contacts')
-    .then(({ data }) => dispatch(tasksActions.fetchContactSuccess(data)))
-    .catch(error => dispatch(tasksActions.fetchContactError(error.message)));
+    .then(({ data }) => dispatch(fetchContactSuccess(data)))
+    .catch(error => dispatch(fetchContactError(error.message)));
 };
 
 const addUserContact = ({ name, number }) => dispatch => {
-  dispatch(tasksActions.addContactRequest());
+  dispatch(addContactRequest());
 
   axios
     .post('contacts', { name, number })
-    .then(({ data }) => dispatch(tasksActions.addContactSuccess(data)))
-    .catch(error => dispatch(tasksActions.addContactError(error.message)));
+    .then(({ data }) => dispatch(addContactSuccess(data)))
+    .catch(error => dispatch(addContactError(error.message)));
 };
 
 const removeUserContact = id => dispatch => {
-  dispatch(tasksActions.removeContactRequest(id));
+  dispatch(removeContactRequest(id));
 
   axios
     .delete(`contacts/${id}`)
-    .then(() => dispatch(tasksActions.removeContactSuccess(id)))
-    .catch(error => dispatch(tasksActions.removeContactError(error.message)));
+    .then(() => dispatch(removeContactSuccess(id)))
+    .catch(error => dispatch(removeContactError(error.message)));
 };
 
 export { fetchUserContact, addUserContact, removeUserContact };

@@ -1,9 +1,14 @@
 {
   "contacts": [
     {
-      "name": "Vitalii",
-      "number": "098-503-36-85",
+      "name": "ВИТАЛИЙ",
+      "number": "111",
       "id": 1
+    },
+    {
+      "name": "Dima",
+      "number": "111",
+      "id": 2
     }
   ]
 }

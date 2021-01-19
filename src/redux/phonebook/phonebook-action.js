@@ -1,33 +1,33 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const filterContact = createAction('contact/Filter');
+export const filterContact = createAction('contact/Filter');
 
-const fetchContactRequest = createAction('contact/fetchRequest');
-const fetchContactSuccess = createAction('contact/fetchSuccess');
-const fetchContactError = createAction('contact/fetchError');
+export const fetchContactRequest = createAction('contact/fetchRequest');
+export const fetchContactSuccess = createAction('contact/fetchSuccess');
+export const fetchContactError = createAction('contact/fetchError');
 
-const addContactRequest = createAction('contact/addRequest');
-const addContactSuccess = createAction('contact/addSuccess');
-const addContactError = createAction('contact/addError');
+export const addContactRequest = createAction('contact/addRequest');
+export const addContactSuccess = createAction('contact/addSuccess');
+export const addContactError = createAction('contact/addError');
 
-const removeContactRequest = createAction('contact/removeRequest');
-const removeContactSuccess = createAction('contact/removeSuccess');
-const removeContactError = createAction('contact/removeError');
+export const removeContactRequest = createAction('contact/removeRequest');
+export const removeContactSuccess = createAction('contact/removeSuccess');
+export const removeContactError = createAction('contact/removeError');
 
-const allActions = {
-  filterContact,
-  fetchContactRequest,
-  fetchContactSuccess,
-  fetchContactError,
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  removeContactRequest,
-  removeContactSuccess,
-  removeContactError,
-};
+// const tasksActions = {
+//   filterContact,
+//   fetchContactRequest,
+//   fetchContactSuccess,
+//   fetchContactError,
+//   addContactRequest,
+//   addContactSuccess,
+//   addContactError,
+//   removeContactRequest,
+//   removeContactSuccess,
+//   removeContactError,
+// };
 
-export default allActions;
+// export default tasksActions;
 
 // export default {
 //   filterContact,
