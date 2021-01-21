@@ -8,7 +8,7 @@ const ListItem = styled.li`
 `;
 
 const Text = styled.p`
-  color: #fa8072;
+  color: #4b0082;
   margin: 0;
 `;
 

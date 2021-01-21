@@ -1,23 +1,98 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+// const Loader = styled.div`
+//   width: 250px;
+//   height: 40px;
+//   overflow: hidden;
+//   background-color: rgb(255, 255, 255);
+//   margin: auto;
+//   border-radius: 20px;
+//   -o-border-radius: 20px;
+//   -ms-border-radius: 20px;
+//   -webkit-border-radius: 20px;
+//   -moz-border-radius: 20px;
+// `;
+
+// const bounce_loadingProgressG = keyframes`
+// 	0%{
+// 		margin-left:-250px;
+// 	}
+
+// 	100%{
+// 		margin-left:250px;
+// 	}
+// `;
+
+// const One = styled.div`
+//   background-color: #6ab1d7;
+//   margin-top: 0;
+//   margin-left: -250px;
+//   animation-name: ${bounce_loadingProgressG};
+//   -o-animation-name: ${bounce_loadingProgressG};
+//   -ms-animation-name: ${bounce_loadingProgressG};
+//   -webkit-animation-name: ${bounce_loadingProgressG};
+//   -moz-animation-name: ${bounce_loadingProgressG};
+//   animation-duration: 2s;
+//   -o-animation-duration: 2s;
+//   -ms-animation-duration: 2s;
+//   -webkit-animation-duration: 2s;
+//   -moz-animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   -o-animation-iteration-count: infinite;
+//   -ms-animation-iteration-count: infinite;
+//   -webkit-animation-iteration-count: infinite;
+//   -moz-animation-iteration-count: infinite;
+//   animation-timing-function: linear;
+//   -o-animation-timing-function: linear;
+//   -ms-animation-timing-function: linear;
+//   -webkit-animation-timing-function: linear;
+//   -moz-animation-timing-function: linear;
+//   width: 250px;
+//   height: 40px;
+// `;
 
 const Loader = styled.div`
+  width: 250px;
+  height: 40px;
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  perspective: 780px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+`;
+
+const cssloadMotion = keyframes`
+	0% {
+		transform: translateX(0) scale(1);
+	}
+	25% {
+		transform: translateX(-49px) scale(0.3);
+	}
+	50% {
+		transform: translateX(0) scale(1);
+	}
+	75% {
+		transform: translateX(49px) scale(0.3);
+	}
+	100% {
+		transform: translateX(0) scale(1);
+	}
 `;
 
 const One = styled.div`
-  color: #fff;
-  font-size: 12em;
-  font-weight: bold;
-  font-family: Helvetica;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #3399ff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: ${cssloadMotion} 1s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  -o-animation: ${cssloadMotion} 1s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  -ms-animation: ${cssloadMotion} 1s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  -webkit-animation: ${cssloadMotion} 1s cubic-bezier(0.77, 0, 0.175, 1)
+    infinite;
+  -moz-animation: ${cssloadMotion} 1s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 `;
 
 export { Loader, One };
