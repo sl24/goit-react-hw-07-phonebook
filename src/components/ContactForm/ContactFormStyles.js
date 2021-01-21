@@ -47,7 +47,7 @@ const LabelForm = styled.label`
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  color: #e9967a;
+  color: #0874a8;
 `;
 
 export { Form, InputForm, Button, LabelForm };

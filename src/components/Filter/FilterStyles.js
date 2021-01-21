@@ -18,7 +18,7 @@ const FilterLabel = styled.label`
   display: block;
   text-align: center;
   margin: 0 auto;
-  color: #fa8072;
+  color: #0874a8;
   font-size: 22px;
   font-weight: bold;
 `;
