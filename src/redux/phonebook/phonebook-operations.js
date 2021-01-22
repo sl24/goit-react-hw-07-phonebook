@@ -33,7 +33,7 @@ const addUserContact = ({ name, number }) => dispatch => {
 };
 
 const removeUserContact = id => dispatch => {
-  dispatch(removeContactRequest(id));
+  dispatch(removeContactRequest());
 
   axios
     .delete(`contacts/${id}`)
